@@ -1,6 +1,37 @@
 ﻿body {
   font-family: 'Segoe UI', sans-serif;
 }
+#post-jam {
+  position: absolute;
+  display: none;
+  padding: 0.5em;
+  text-align: center;
+  background: rgba(255, 74, 81, 0.9);
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 0.9em;
+  border: 3px solid #ffb0b3;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+#post-jam:hover {
+  background: #ff7d82;
+}
+@media (min-height: 800px) {
+  #post-jam {
+    display: block;
+    right: 0;
+    left: 0;
+    top: 80px;
+    bottom: auto;
+    font-size: 1em;
+    background: rgba(255, 74, 81, 0.6);
+    border-left: 0;
+    border-right: 0;
+  }
+}
 .credits {
   background: rgba(0, 0, 0, 0.8);
   padding: 2em;
@@ -61,6 +92,17 @@ div#background {
   .ui-buttons .ui-button {
     font-size: 2em;
   }
+  .ui-buttons .ui-button#post-jam-btn {
+    display: none;
+  }
+}
+#post-jam-btn {
+  background: rgba(255, 74, 81, 0.9);
+  color: white;
+  font-size: 1em;
+}
+#post-jam-btn:hover {
+  background: #ff7d82;
 }
 #commit {
   position: absolute;

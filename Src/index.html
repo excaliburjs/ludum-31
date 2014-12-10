@@ -24,8 +24,13 @@
 </head>
 <body>
     <h1 style="visibility: hidden; position: absolute; top: -1000px; left: -1000px;">Sweep Stacks (Ludum Dare 31 Game Jam Entry)</h1>
-    
+
+    <a id="post-jam" href="http://excaliburjs.com/sweep/?utm_source=original-site&utm_medium=banner&utm_campaign=Original%20Site%20Banner">
+        Archived for LDJam31. Play latest with better mobile support!
+    </a>
+
     <div class="ui-buttons">
+        <a id="post-jam-btn" href="http://excaliburjs.com/sweep/?utm_source=original-site&utm_medium=banner&utm_campaign=Original%20Site%20Banner" title="This is the archived version. Play latest with better mobile support!" class="ui-button">LATEST</a>
         <a id="sound" title="Mute/Unmute Sound" class="ui-button fa fa-fw fa-volume-up"></a>
         <a id="how-to-play" title="How to Play" class="how-to-play ui-button fa fa-fw fa-question-circle"></a>
         <a id="credits" title="Credits" class="ui-button fa fa-fw fa-group" href="credits.html"></a>
@@ -33,7 +38,7 @@
 
     <a id="commit" href="https://github.com/excaliburjs/ludum-31/commit/COMMIT_NUMBER">@COMMIT_NUMBER</a>
     <div id="background"></div>
-    
+
 
     <div id="tutorial-normal" class="modal tutorial">
 
@@ -58,9 +63,9 @@
                 <p>
                     <a id="tutorial-normal-next" href="#" class="next">Next</a> <a id="dismiss-normal-modal" href="javascript:void(0)" class="got-it">skip</a>
                 </p>
-                
+
                 <h2>Controls</h2>
-                
+
                 <ul class="controls">
                     <li><strong>Remove Gems:</strong> Drag over 3 or more tiles</li>
                     <li><strong>Cancel Move:</strong> Right-click or reverse drag</li>
@@ -91,7 +96,7 @@
                 <p>
                     <a id="tutorial-challenge-next" href="#" class="next">Next</a> <a id="dismiss-challenge-modal" href="javascript:void(0)" class="got-it">skip</a>
                 </p>
-                
+
                 <h2>Controls</h2>
 
                 <ul class="controls">
@@ -100,7 +105,7 @@
                 </ul>
             </div>
         </div>
-    </div>   
+    </div>
 
     <div id="game-over" class="modal">
         <div class="modal-bg"></div>
@@ -164,7 +169,7 @@
     </div>
 
     <canvas id="game"></canvas>
-    
+
     <script src="scripts/lodash.min.js"></script>
     <script src="scripts/spectra.min.js"></script>
     <script src="scripts/cookies.min.js"></script>
