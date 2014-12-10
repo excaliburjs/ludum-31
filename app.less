@@ -3,6 +3,39 @@
     
 }
 
+#post-jam {
+    position: absolute;
+    display: none;
+    padding: 0.5em;
+    text-align: center;
+    background: rgba(255, 74, 81, 0.9);
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 0.9em;
+    border: 3px solid lighten(#FF4A51, 20%);
+
+    &:hover {
+        background: lighten(#FF4A51, 10%);
+    }
+
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+
+    @media (min-height: 800px) {
+        display: block;
+        right: 0;
+        left: 0;
+        top: 80px;
+        bottom: auto;
+        font-size: 1em;
+        background: rgba(255, 74, 81, 0.6);
+        border-left: 0;
+        border-right: 0;        
+    }
+}
+
 .credits {
     background: rgba(0, 0, 0, 0.8);
     padding: 2em;
@@ -60,8 +93,19 @@ div#background {
 
         @media (min-height: 800px) {
             font-size: 2em;
+
+            &#post-jam-btn { display: none; }
         }
     }
+}
+
+#post-jam-btn {
+    background: rgba(255, 74, 81, 0.9);
+    &:hover {
+        background: lighten(#FF4A51, 10%);
+    }
+    color: white;
+    font-size: 1em;
 }
 
 #commit {
