@@ -249,7 +249,7 @@ function gameOver() {
    } else if (gameMode == GameMode.Timed) {
       document.getElementById("challenge").innerHTML = "Try Standard Mode";
    }
-
+   var enduranceBonus = stats.calculateEnduranceBonus();
    var totalScore = stats.getFinalScore();
    var longestChain = stats.getLongestChain();
    var turnsTaken = stats.getTurnNumber();
@@ -277,8 +277,6 @@ function gameOver() {
    document.getElementById("game-over-swept").innerHTML = stats.getTotalPiecesSwept().toString();
 
    document.getElementById("game-over-chain").innerHTML = stats.getTotalChainBonus().toString();
-
-   var enduranceBonus = stats.calculateEnduranceBonus();
 
    document.getElementById("game-over-multiplier").innerHTML = (stats.getFinalScore() - enduranceBonus - stats.getTotalChainBonus() - stats.getTotalPiecesSwept()).toString();
 
