@@ -15,6 +15,7 @@ class MainMenu extends ex.UIActor {
    private static _StandardButtonPos = new ex.Point(42, 170);
    private static _ChallengeButtonPos = new ex.Point(42, 170 + Config.MainMenuButtonHeight + 20);
    private static _LogoPos = new ex.Point(0, 50);
+   private static _LoadAfterTutorial = false;
 
    constructor() {
       super();
@@ -51,7 +52,13 @@ class MainMenu extends ex.UIActor {
          if (slides.length <= 0) return;
 
          if (slides.length === (tutNormalIdx + 1)) {
+            tutNormalIdx = 0;
+            document.getElementById("tutorial-normal-next").innerHTML = "Next";
             this._dismissNormalTutorial();
+            if (MainMenu._LoadAfterTutorial) {
+               MainMenu._LoadAfterTutorial = false;
+               MainMenu.LoadStandardMode(true);
+            }
             return;
          }
 
@@ -78,7 +85,13 @@ class MainMenu extends ex.UIActor {
          if (slides.length <= 0) return;
 
          if (slides.length === (tutChallengeIdx + 1)) {
+            tutChallengeIdx = 0;
+            document.getElementById("tutorial-challenge-next").innerHTML = "Next";
             this._dismissChallengeTutorial();
+            if (MainMenu._LoadAfterTutorial) {
+               MainMenu._LoadAfterTutorial = false;
+               MainMenu.LoadChallengeMode(true);
+            }
             return;
          }
 
@@ -202,6 +215,7 @@ class MainMenu extends ex.UIActor {
       skipTutorialCheck = (typeof skipTutorialCheck === "boolean" && skipTutorialCheck);
 
       if (!skipTutorialCheck && !MainMenu._hasFinishedTutorial(GameMode.Standard)) {
+         MainMenu._LoadAfterTutorial = true;
          MainMenu.ShowNormalTutorial();
       } else {
          loadConfig(Config.loadCasual);
@@ -215,6 +229,7 @@ class MainMenu extends ex.UIActor {
       skipTutorial = (typeof skipTutorial === "boolean" && skipTutorial);
 
       if (!skipTutorial && !MainMenu._hasFinishedTutorial(GameMode.Timed)) {
+         MainMenu._LoadAfterTutorial = true;
          MainMenu.ShowChallengeTutorial();
       } else {
          loadConfig(Config.loadSurvivalReverse);
